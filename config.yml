@@ -1,0 +1,31 @@
+framework:
+  form: ~
+  templating:
+    engines:
+    - twig
+  validation:
+    enable_annotations: true
+  secret: not_important
+  profiler: ~
+
+doctrine:
+  dbal:
+    driver: pdo_sqlite
+    path: "%kernel.cache_dir%/db.sqlite"
+  orm:
+    auto_mapping: true
+    auto_generate_proxy_classes: true
+
+twig:
+  debug: true
+  strict_variables: true
+  form_themes:
+    # - 'bootstrap_3_layout.html.twig'
+    - 'bootstrap_3_horizontal_layout.html.twig'
+
+web_profiler:
+  toolbar: true
+
+assetic:
+  use_controller: true
+  read_from: "%kernel.root_dir%/web/"

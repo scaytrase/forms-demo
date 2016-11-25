@@ -1,0 +1,16 @@
+{% extends 'ExampleBundle::base.html.twig' %}
+
+{% block body %}
+    <h1 class="page-header">
+        Entity list
+        <small>
+            <a href="{{ path('entity_create', {'alias': alias}) }}">Create entity of {{ alias }}</a>
+        </small>
+    </h1>
+
+    {% for entity in entities %}
+        <li>
+            <a href="{{ path('entity_edit', {'alias': alias, 'entity': entity.id}) }}">{{ entity }}</a>
+        </li>
+    {% endfor %}
+{% endblock %}
